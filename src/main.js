@@ -45,7 +45,7 @@ form.addEventListener('submit', function(event) {
     if (!query) {
         iziToast.warning({
             title: 'Warning',
-            message: 'Please enter a search query',
+            message: 'Please enter a search images',
         });
         return;
     }
