@@ -3,22 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <link rel="stylesheet" href="simplelightbox.min.css" />
+    <link rel="stylesheet" href="iziToast.min.css" /> -->
+
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1 class="title">Welcome to the world of pictures!!!</h1>
-    </header>
+    <div class="container">
+      <h1>Image Search App</h1>
+      <form id="search-form" class="search-form">
+        <input
+          type="text"
+          id="search-input"
+          class="form-input"
+          name="query"
+          placeholder="Search pictures"
+        />
+        <button type="submit" class="btn">Search</button>
+      </form>
+      <div class="hero-container js-container gallery"></div>
+      <div class="loader"></div>
+    </div>
 
-    <form class="">
-      <input
-        type="text"
-        class="fofm-input"
-        name="query"
-        placeholder="Search pictures"
-      />
-      <button type="submit" class="btn">Search</button>
-    </form>
-    <script type="module" src="./main.js"></script>
+    <script src="main.js" type="module"></script>
+    <!-- <script src="simple-lightbox.min.js"></script>
+    <script src="iziToast.min.js"></script> -->
   </body>
 </html>
