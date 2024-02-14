@@ -15,29 +15,7 @@ const form = document.getElementById('search-form');
 const gallery = document.querySelector('.js-container');
 const loader = document.querySelector('.loader');
 
-// form.addEventListener('submit', async function(event) {
-//     event.preventDefault();
-
-//     const query = document.getElementById('search-input').value;
-//     if (!query) return;
-
-//     loader.style.display = 'block';
-//     gallery.innerHTML = '';
-
-//     try {
-//         const data = await searchFoto(query);
-//         renderFoto(data);
-//     } catch (error) {
-//         console.error('Error fetching data:', error);
-//         iziToast.error({
-//             title: 'Error',
-//             message: 'An error occurred while searching for images',
-//         });
-//     }
-
-//     loader.style.display = 'none';
-// });
-
+// Додаємо обробник події click для кнопки
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -50,10 +28,12 @@ form.addEventListener('submit', function(event) {
         return;
     }
 
+    // Показати завантажувач після кліку на кнопку
     loader.style.display = 'block';
     gallery.innerHTML = '';
 
-  searchFoto(query)
+    // Зробити HTTP-запит
+    searchFoto(query)
         .then(data => {
             if (data.hits.length === 0) {
                 iziToast.error({
@@ -74,6 +54,7 @@ form.addEventListener('submit', function(event) {
             }
         })
         .finally(() => {
+            // Приховати завантажувач після завершення запиту
             loader.style.display = 'none';
         });
 });
